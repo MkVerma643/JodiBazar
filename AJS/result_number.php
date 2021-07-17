@@ -80,7 +80,7 @@ if(isset($_POST['submit']))
                                    while ($row=mysqli_fetch_array($gt)) {
                                    $no++; ?>
                               <option value='<?php echo $row['game_time'] ?>'><?php echo $row['game_time'] ?></option>
-                              <? } ?>
+                              <?php } ?>
                            </select>
                         </div>
                      </div>

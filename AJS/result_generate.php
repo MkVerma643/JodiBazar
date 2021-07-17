@@ -148,7 +148,7 @@ else
                                  
                                    $no++; ?>
                               <option value='<?php echo $row['game_time'] ?>'><?php echo $row['game_time'] ?></option>
-                              <? } ?>
+                              <?php } ?>
                            </select>
                         </div>
                      </div>

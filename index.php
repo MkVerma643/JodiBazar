@@ -148,7 +148,7 @@ else
                                                                      
                                                                       ?>
                                                                   <option value='<?php echo $row['game_time'] ?>' <?php if($row['game_time']==$_GET['game_selected']){echo "selected";} ?> ><?php echo $row['game_time'] ?></option>
-                                                                  <? } ?>
+                                                                  <?php } ?>
                                                                </select>
                                                             </td>
                                                          </tr>
@@ -231,7 +231,7 @@ else
                                        </tbody>
                                     </table>
                                     </div>
-                                    <?
+                                    <?php
                                    }
                                       }
                                        ?>
@@ -283,6 +283,7 @@ else
       </div>
    </body>
 </html>
+
 <script>
 var count='<?php echo $seconds; ?>';
 var current_game='<?php echo $current_game; ?>';

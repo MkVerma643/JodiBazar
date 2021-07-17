@@ -55,7 +55,7 @@
                                  
                                    $no++; ?>
                               <option value='<?php echo $row['game_time'] ?>' <?php if($_GET['game_selected']==$row['game_time']){echo "SELECTED";} ?>><?php echo $row['game_time'] ?></option>
-                              <? } ?>
+                              <?php } ?>
                            </select>
                      </div>
                   </div>
