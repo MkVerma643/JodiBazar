@@ -71,7 +71,7 @@ else
 <!DOCTYPE html>
 <html lang="en">
    <head>
-      <title>LuckyFour Result Chart</title>
+      <title>JodiBazar Result Chart</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
@@ -107,16 +107,16 @@ else
                <tbody>
                   <tr>
                      <td align="center">
-                        <table width="100%" style="background-color: #f9bf25;">
+                        <table width="100%" style="background-color:#acecd7;">
                            <tbody>
                             <tr>
                                   <td align="center">
-                                          <div class="row" style="background-color:#002051; height:100%;">
+                                          <div class="row" style="background-color:#fcf8e3; height:100%;">
                                             <div class="col-lg-12" style="padding:10px 0;">
                                            
-                                               <div class="col-lg-4" ><h4 ><b style="font-size: 24px; color: white;">LuckyFour Result Chart </b></h4></div>
-                                              <div class="col-lg-4" ><h5><b style="font-size: 21px;line-height:20px;color: white;">Next Draw Time : <span class="navtext" id="current_game"></span></b></h5></div>
-                                              <div class="col-lg-4" ><h5 ><b style="font-size: 21px;line-height:20px;color: white;">Time To Draw : <span class="navtext" id="timer"> </span></b> </h5></div>
+                                               <div class="col-lg-4" ><h4 ><b style="font-size: 24px; color: black;">JodiBazar Result Chart </b></h4></div>
+                                              <div class="col-lg-4" ><h5><b style="font-size: 21px;line-height:20px;color: black;">Next Draw Time : <span class="navtext" id="current_game"></span></b></h5></div>
+                                              <div class="col-lg-4" ><h5 ><b style="font-size: 21px;line-height:20px;color: black;">Time To Draw : <span class="navtext" id="timer"> </span></b> </h5></div>
                                             </div>
                                           </div>
                                  </td>
@@ -265,7 +265,7 @@ else
                                                 <span style="color: #000000">
                                                 Purchase of lottery using this website is strictly prohibited in the states where lotteries are banned. You must be above 18 years to play Online Lottery.
                                                 <br>
-                                                &nbsp;LFRC all rights reserved.
+                                                &nbsp;<b>JodiBazar,</b>&nbsp; All rights reserved.
                                                 </span>
                                              </td>
                                           </tr>
