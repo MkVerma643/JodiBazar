@@ -221,6 +221,6 @@ $ignore_number=explode(",",$row['ignore_number']);
 });
 
 </script>
-<? 
+<?php 
 }
 ?>
