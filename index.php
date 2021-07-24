@@ -205,6 +205,15 @@ if ($current_time > $start_t and $current_time < $end_time_row['g_time']) {
                                                                                                                         ?></b></td>
                                                 </tr>
                                                 <tr align="center">
+                                                   <?php $batch_0 = explode(",", $row['batch_0']);
+                                                   foreach ($batch_0 as $batch_0_result) {
+
+                                                      echo "<td><b style='font-size:18px;'>" . $batch_0_result . " <br></b></td>";
+                                                   }
+
+                                                   ?>
+                                                </tr>
+                                                <tr align="center">
                                                    <?php $batch_1 = explode(",", $row['batch_1']);
                                                    foreach ($batch_1 as $batch_1_result) {
 
@@ -231,6 +240,52 @@ if ($current_time > $start_t and $current_time < $end_time_row['g_time']) {
 
                                                    ?>
                                                 </tr>
+                                                <tr align="center">
+                                                   <?php $batch_4 = explode(",", $row['batch_4']);
+                                                   foreach ($batch_4 as $batch_4_result) {
+
+                                                      echo "<td><b style='font-size:18px;'>" . $batch_4_result . " <br></b></td>";
+                                                   }
+
+                                                   ?>
+                                                </tr>
+                                                <tr align="center">
+                                                   <?php $batch_5 = explode(",", $row['batch_5']);
+                                                   foreach ($batch_5 as $batch_5_result) {
+
+                                                      echo "<td><b style='font-size:18px;'>" . $batch_5_result . " <br></b></td>";
+                                                   }
+
+                                                   ?>
+                                                </tr>
+                                                <tr align="center">
+                                                   <?php $batch_7 = explode(",", $row['batch_7']);
+                                                   foreach ($batch_7 as $batch_7_result) {
+
+                                                      echo "<td><b style='font-size:18px;'>" . $batch_7_result . " <br></b></td>";
+                                                   }
+
+                                                   ?>
+                                                </tr>
+                                                <tr align="center">
+                                                   <?php $batch_8 = explode(",", $row['batch_8']);
+                                                   foreach ($batch_8 as $batch_8_result) {
+
+                                                      echo "<td><b style='font-size:18px;'>" . $batch_8_result . " <br></b></td>";
+                                                   }
+
+                                                   ?>
+                                                </tr>
+                                                <tr align="center">
+                                                   <?php $batch_9 = explode(",", $row['batch_9']);
+                                                   foreach ($batch_9 as $batch_9_result) {
+
+                                                      echo "<td><b style='font-size:18px;'>" . $batch_9_result . " <br></b></td>";
+                                                   }
+
+                                                   ?>
+                                                </tr>
+                                             
                                              </tbody>
                                           </table>
                                        </div>
