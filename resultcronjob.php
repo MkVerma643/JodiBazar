@@ -52,7 +52,7 @@ if (mysqli_num_rows($select) > 0) {
       if (!empty($b_0_d)) {
         array_push($rand_number, $b_0_d);
       }
-
+      
       // result calculation of batch one
       $b_1_d = substr($batch_1_old[$i], 2); //batch one predefine data
 
