@@ -26,27 +26,34 @@ if(isset($_POST['submit']))
 {
       $game_time=$_POST['game_selected'];
       $ignore_number=$_POST['ignore_number'];
+      $batch_0=implode(",", $_POST['batch_0']);
       $batch_1=implode(",", $_POST['batch_1']);
       $batch_2=implode(",", $_POST['batch_2']);
       $batch_3=implode(",", $_POST['batch_3']);
+      $batch_4=implode(",", $_POST['batch_4']);
+      $batch_5=implode(",", $_POST['batch_5']);
+      $batch_6=implode(",", $_POST['batch_6']);
+      $batch_7=implode(",", $_POST['batch_7']);
+      $batch_8=implode(",", $_POST['batch_8']);
+      $batch_9=implode(",", $_POST['batch_9']);
 
   $check=mysqli_query($con,"SELECT * FROM `result_number_setting` where `game_time`='$game_time' and `added_date`='".date('Y-m-d')."' ");
   if(mysqli_num_rows($check)<1)
   {
     
-   $insert=mysqli_query($con,"INSERT INTO `result_number_setting`(`game_time`, `batch_1`, `batch_2`, `batch_3`,`ignore_number`, `added_date`, `added_time`) 
-                        VALUES ('".$game_time."','".$batch_1."','".$batch_2."','".$batch_3."','".$ignore_number."','".date('Y-m-d')."','".date('h:i:s A')."')");
+   $insert=mysqli_query($con,"INSERT INTO `result_number_setting`(`game_time`, `batch_0`,`batch_1`, `batch_2`, `batch_3`,`batch_4`,`batch_5`,`batch_6`,`batch_7`,`batch_8`,`batch_9`,`ignore_number`, `added_date`, `added_time`) 
+                        VALUES ('".$game_time."','".$batch_0."','".$batch_1."','".$batch_2."','".$batch_3."','".$batch_4."','".$batch_5."','".$batch_6."','".$batch_7."','".$batch_8."','".$batch_9."','".$ignore_number."','".date('Y-m-d')."','".date('h:i:s A')."')");
   }
   else
   {
   
    if(!empty($ignore_number))
    {
-   $insert=mysqli_query($con,"UPDATE `result_number_setting` SET `batch_1`='".$batch_1."',`batch_2`='".$batch_2."',`batch_3`='".$batch_3."',`ignore_number`='".$ignore_number."',`added_date`='".date('Y-m-d')."', `added_time`='".date('h:i:s A')."' WHERE `game_time`='$game_time' and `added_date`='".date('Y-m-d')."' ");
+   $insert=mysqli_query($con,"UPDATE `result_number_setting` SET `batch_0`='".$batch_0."',`batch_1`='".$batch_1."',`batch_2`='".$batch_2."',`batch_3`='".$batch_3."',`batch_4`='".$batch_4."',`batch_5`='".$batch_5."',`batch_6`='".$batch_6."',`batch_7`='".$batch_7."',`batch_8`='".$batch_8."',`batch_9`='".$batch_9."',`ignore_number`='".$ignore_number."',`added_date`='".date('Y-m-d')."', `added_time`='".date('h:i:s A')."' WHERE `game_time`='$game_time' and `added_date`='".date('Y-m-d')."' ");
    }
    else
    {
-   $insert=mysqli_query($con,"UPDATE `result_number_setting` SET `batch_1`='".$batch_1."',`batch_2`='".$batch_2."',`batch_3`='".$batch_3."',
+   $insert=mysqli_query($con,"UPDATE `result_number_setting` SET `batch_0`='".$batch_0."',`batch_1`='".$batch_1."',`batch_2`='".$batch_2."',`batch_3`='".$batch_3."',`batch_4`='".$batch_4."',`batch_5`='".$batch_5."',`batch_6`='".$batch_6."',`batch_7`='".$batch_7."',`batch_8`='".$batch_8."',`batch_9`='".$batch_9."',
                          `added_date`='".date('Y-m-d')."', `added_time`='".date('h:i:s A')."' WHERE `game_time`='$game_time' and `added_date`='".date('Y-m-d')."' ");
    }
   }
@@ -153,6 +160,17 @@ var ignore_number = value.split(",");
     
 game_time = $("#game_selected").val();
 today_date='<?php echo date('Y-m-d'); ?>';
+
+var batch_0 = $("input[name='batch_0[]']").map(function()
+{
+var batch_0= $(this).val();
+var batch0_count= $(this).val().length;
+if(batch0_count >2)
+{
+  return batch_0;
+}
+}).get();
+
 var batch_1 = $("input[name='batch_1[]']").map(function()
 {
 var batch_1= $(this).val();
@@ -184,6 +202,72 @@ if(batch3_count>2)
 }
 }).get();
 
+var batch_4 = $("input[name='batch_4[]']").map(function()
+{
+var batch_4= $(this).val();
+var batch4_count= $(this).val().length;
+
+if(batch4_count>2)
+{
+  return batch_4;
+}
+}).get();
+
+var batch_5 = $("input[name='batch_3[]']").map(function()
+{
+var batch_5= $(this).val();
+var batch5_count= $(this).val().length;
+
+if(batch5_count>2)
+{
+  return batch_5;
+}
+}).get();
+
+var batch_6 = $("input[name='batch_3[]']").map(function()
+{
+var batch_6= $(this).val();
+var batch6_count= $(this).val().length;
+
+if(batch6_count>2)
+{
+  return batch_6;
+}
+}).get();
+
+var batch_7 = $("input[name='batch_3[]']").map(function()
+{
+var batch_7= $(this).val();
+var batch7_count= $(this).val().length;
+
+if(batch7_count>2)
+{
+  return batch_7;
+}
+}).get();
+
+var batch_8 = $("input[name='batch_3[]']").map(function()
+{
+var batch_8= $(this).val();
+var batch8_count= $(this).val().length;
+
+if(batch8_count>2)
+{
+  return batch_8;
+}
+}).get();
+
+var batch_9 = $("input[name='batch_3[]']").map(function()
+{
+var batch_9= $(this).val();
+var batch9_count= $(this).val().length;
+
+if(batch9_count>2)
+{
+  return batch_9;
+}
+}).get();
+
 var newLine = "\r\n"
 var msg = "Do you really want to change ??"
 msg += newLine;
@@ -191,7 +275,7 @@ msg += 'Date '+today_date;
 msg += newLine;
 msg += 'DrawTime '+game_time;
 msg += newLine;
-msg += batch_1+','+batch_2+','+batch_3;
+msg += batch_0+','+batch_1+','+batch_2+','+batch_3+','+batch_4+','+batch_5+','+batch_6+','+batch_7+','+batch_8+','+batch_9;
 
 
 // var txtlen = batch_3.length;

@@ -61,11 +61,11 @@ if(isset($_GET['id']))
 
                           <center>
                              <?php 
-                             if(!empty($row['batch_1']))
+                             if(!empty($row['batch_0']))
                              {
-                               echo '<span>Game10 - </span>';
-                             $batch_1=explode(",", $row['batch_1']);
-                             foreach ($batch_1 as $no) {
+                               echo '<span>Game00 - </span>';
+                             $batch_0=explode(",", $row['batch_0']);
+                             foreach ($batch_0 as $no) {
                                 if(strlen($no)>2)
                                 {
                                   echo $no." ";
@@ -77,20 +77,19 @@ if(isset($_GET['id']))
                           </center>
                         </div>
                         <div class="form-group">
+
                           <center>
-                            
-                              <?php 
-                             if(!empty($row['batch_2']))
+                             <?php 
+                             if(!empty($row['batch_1']))
                              {
-                              echo '<span>Game30 - </span>';
-                             $batch_2=explode(",", $row['batch_2']);
-                             foreach ($batch_2 as $no_2) {
-                                if(strlen($no_2)>2)
+                               echo '<span>Game10 - </span>';
+                             $batch_1=explode(",", $row['batch_1']);
+                             foreach ($batch_1 as $no1) {
+                                if(strlen($no1)>2)
                                 {
-                                  echo $no_2." ";
+                                  echo $no1." ";
                                 }
                              }
-
                              }
 
                              ?>
@@ -99,14 +98,139 @@ if(isset($_GET['id']))
                         <div class="form-group">
                           <center>
                               <?php 
+                             if(!empty($row['batch_2']))
+                             {
+                              echo '<span>Game20 - </span>';
+                             $batch_2=explode(",", $row['batch_2']);
+                             foreach ($batch_2 as $no_2) {
+                                if(strlen($no_2)>2)
+                                {
+                                  echo $no_2." ";
+                                }
+                             }
+                             }
+                             ?>
+                          </center>
+                        </div>
+                        <div class="form-group">
+                          <center>
+                              <?php 
                              if(!empty($row['batch_3']))
                              {
-                              echo '<span>Game50 - </span>';
+                              echo '<span>Game30 - </span>';
                              $batch_3=explode(",", $row['batch_3']);
                              foreach ($batch_3 as $no_3) {
                                 if(strlen($no_3)>2)
                                 {
                                   echo $no_3." ";
+                                }
+                             }
+                             }
+
+                             ?>
+                          </center>
+                        </div>
+                        <div class="form-group">
+                          <center>
+                              <?php 
+                             if(!empty($row['batch_4']))
+                             {
+                              echo '<span>Game40 - </span>';
+                             $batch_4=explode(",", $row['batch_4']);
+                             foreach ($batch_4 as $no_4) {
+                                if(strlen($no_4)>2)
+                                {
+                                  echo $no_4." ";
+                                }
+                             }
+                             }
+
+                             ?>
+                          </center>
+                        </div>
+                        <div class="form-group">
+                          <center>
+                              <?php 
+                             if(!empty($row['batch_5']))
+                             {
+                              echo '<span>Game50 - </span>';
+                             $batch_5=explode(",", $row['batch_5']);
+                             foreach ($batch_5 as $no_5) {
+                                if(strlen($no_5)>2)
+                                {
+                                  echo $no_5." ";
+                                }
+                             }
+                             }
+
+                             ?>
+                          </center>
+                        </div>
+                        <div class="form-group">
+                          <center>
+                              <?php 
+                             if(!empty($row['batch_6']))
+                             {
+                              echo '<span>Game60 - </span>';
+                             $batch_6=explode(",", $row['batch_6']);
+                             foreach ($batch_6 as $no_6) {
+                                if(strlen($no_6)>2)
+                                {
+                                  echo $no_6." ";
+                                }
+                             }
+                             }
+
+                             ?>
+                          </center>
+                        </div>
+                        <div class="form-group">
+                          <center>
+                              <?php 
+                             if(!empty($row['batch_7']))
+                             {
+                              echo '<span>Game70 - </span>';
+                             $batch_7=explode(",", $row['batch_7']);
+                             foreach ($batch_7 as $no_7) {
+                                if(strlen($no_7)>2)
+                                {
+                                  echo $no_7." ";
+                                }
+                             }
+                             }
+
+                             ?>
+                          </center>
+                        </div>
+                        <div class="form-group">
+                          <center>
+                              <?php 
+                             if(!empty($row['batch_8']))
+                             {
+                              echo '<span>Game80 - </span>';
+                             $batch_8=explode(",", $row['batch_8']);
+                             foreach ($batch_8 as $no_8) {
+                                if(strlen($no_8)>2)
+                                {
+                                  echo $no_8." ";
+                                }
+                             }
+                             }
+
+                             ?>
+                          </center>
+                        </div>
+                        <div class="form-group">
+                          <center>
+                              <?php 
+                             if(!empty($row['batch_9']))
+                             {
+                              echo '<span>Game90 - </span>';
+                             $batch_9=explode(",", $row['batch_9']);
+                             foreach ($batch_9 as $no_9) {
+                                if(strlen($no_9)>2)
+                                {
+                                  echo $no_9." ";
                                 }
                              }
                              }
