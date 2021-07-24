@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 17, 2021 at 06:52 PM
+-- Generation Time: Jul 22, 2021 at 06:40 PM
 -- Server version: 10.4.10-MariaDB
 -- PHP Version: 7.3.12
 
@@ -111,7 +111,15 @@ INSERT INTO `game_time` (`game_time_id`, `game_time`, `g_time`, `interval`, `sav
 (48, '08:45 PM', '20:45:00', 15, 10, 2),
 (49, '09:00 PM', '21:00:00', 15, 10, 2),
 (50, '09:15 PM', '21:15:00', 15, 10, 2),
-(51, '09:30 PM', '21:30:00', 15, 10, 2);
+(51, '09:30 PM', '21:30:00', 15, 10, 2),
+(52, '09:45 PM', '21:45:00', 15, 10, 2),
+(53, '10:00 PM', '22:00:00', 15, 10, 2),
+(54, '10:15 PM', '22:15:00', 15, 10, 2),
+(55, '10:30 PM', '22:30:00', 15, 10, 2),
+(56, '10:45 PM', '22:45:00', 15, 10, 2),
+(57, '11:00 PM', '23:00:00', 15, 10, 2),
+(58, '11:15 PM', '23:15:00', 15, 10, 2),
+(59, '11:30 PM', '23:30:00', 15, 10, 2);
 
 -- --------------------------------------------------------
 
@@ -122,9 +130,16 @@ INSERT INTO `game_time` (`game_time_id`, `game_time`, `g_time`, `interval`, `sav
 CREATE TABLE `result_number_setting` (
   `id` int(11) NOT NULL,
   `game_time` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `batch_0` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `batch_1` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `batch_2` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `batch_3` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `batch_4` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `batch_5` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `batch_6` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `batch_7` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `batch_8` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `batch_9` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `ignore_number` text COLLATE utf8_unicode_ci NOT NULL,
   `added_date` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
   `added_time` varchar(20) COLLATE utf8_unicode_ci NOT NULL
@@ -169,9 +184,16 @@ INSERT INTO `welcome_msg` (`id`, `msg`) VALUES
 CREATE TABLE `win_card` (
   `id` int(255) NOT NULL,
   `game_time` varchar(20) NOT NULL,
+  `batch_0` varchar(255) NOT NULL,
   `batch_1` varchar(255) NOT NULL,
   `batch_2` varchar(255) NOT NULL,
   `batch_3` varchar(255) NOT NULL,
+  `batch_4` varchar(255) NOT NULL,
+  `batch_5` varchar(255) NOT NULL,
+  `batch_6` varchar(255) NOT NULL,
+  `batch_7` varchar(255) NOT NULL,
+  `batch_8` varchar(255) NOT NULL,
+  `batch_9` varchar(255) NOT NULL,
   `win_date` varchar(20) NOT NULL,
   `added_time` varchar(20) NOT NULL,
   `type` varchar(255) NOT NULL,
@@ -232,13 +254,13 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `game_time`
 --
 ALTER TABLE `game_time`
-  MODIFY `game_time_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
+  MODIFY `game_time_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
 
 --
 -- AUTO_INCREMENT for table `result_number_setting`
 --
 ALTER TABLE `result_number_setting`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `test`
@@ -256,7 +278,7 @@ ALTER TABLE `welcome_msg`
 -- AUTO_INCREMENT for table `win_card`
 --
 ALTER TABLE `win_card`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

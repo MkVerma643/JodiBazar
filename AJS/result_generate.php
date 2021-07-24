@@ -29,10 +29,17 @@ if(isset($_POST['submit']))
 {
   $game_date=$_POST['game_date'];
   $game_time=$_POST['game_selected'];
+  $batch_0_result=implode(",", $_POST['batch_0']);
   $batch_1_result=implode(",", $_POST['batch_1']);
   $batch_2_result=implode(",", $_POST['batch_2']);
   $batch_3_result=implode(",", $_POST['batch_3']);
-if(!empty($batch_1_result) and !empty($batch_2_result) and !empty($batch_3_result) )
+  $batch_4_result=implode(",", $_POST['batch_4']);
+  $batch_5_result=implode(",", $_POST['batch_5']);
+  $batch_6_result=implode(",", $_POST['batch_6']);
+  $batch_7_result=implode(",", $_POST['batch_7']);
+  $batch_8_result=implode(",", $_POST['batch_8']);
+  $batch_9_result=implode(",", $_POST['batch_9']);
+if(!empty($batch_0_result) and !empty($batch_1_result) and !empty($batch_2_result) and !empty($batch_3_result) and !empty($batch_4_result) and !empty($batch_5_result) and !empty($batch_6_result) and !empty($batch_7_result) and !empty($batch_8_result) and !empty($batch_9_result) )
 {
  $select=mysqli_query($con,"SELECT `g_time` FROM `game_time` WHERE `game_time`='".$game_time."'");
 
@@ -45,7 +52,7 @@ if (mysqli_num_rows($select)>0)
   if(mysqli_num_rows($check_win)<1)
   {
 
-  $insert_result=mysqli_query($con,"INSERT INTO `win_card`(`game_time`, `batch_1`, `batch_2`, `batch_3`, `win_date`, `added_time`, `type`,`g_time`) VALUES ('$game_time','".$batch_1_result."','".$batch_2_result."','".$batch_3_result."','".$game_date."','".$game_time."','Admin','".$time_row['g_time']."')");
+  $insert_result=mysqli_query($con,"INSERT INTO `win_card`(`game_time`, `batch_0`, `batch_1`, `batch_2`, `batch_3`,`batch_4`,`batch_5`,`batch_6`,`batch_7`,`batch_8`,`batch_9`, `win_date`, `added_time`, `type`,`g_time`) VALUES ('$game_time','".$batch_0_result."','".$batch_1_result."','".$batch_2_result."','".$batch_3_result."','".$batch_4_result."','".$batch_5_result."','".$batch_6_result."','".$batch_7_result."','".$batch_8_result."','".$batch_9_result."','".$game_date."','".$game_time."','Admin','".$time_row['g_time']."')");
 
   if($insert_result==true)
   {
@@ -54,7 +61,7 @@ if (mysqli_num_rows($select)>0)
   }
   else
   {
-   echo '<script> alert("Somthing Went Wrong !!"); </script>';
+   echo '<script> alert("Something Went Wrong !!"); </script>';
 
   }
 
@@ -78,7 +85,7 @@ if (mysqli_num_rows($select)>0)
   if(mysqli_num_rows($check_win)<1)
   {
 
-  $insert_result=mysqli_query($con,"INSERT INTO `win_card`(`game_time`, `batch_1`, `batch_2`, `batch_3`, `win_date`, `added_time`, `type`,`g_time`) VALUES ('$game_time','".$batch_1_result."','".$batch_2_result."','".$batch_3_result."','".$game_date."','".$game_time."','Admin','".$time_row['g_time']."')");
+  $insert_result=mysqli_query($con,"INSERT INTO `win_card`(`game_time`, `batch_0`,`batch_1`, `batch_2`, `batch_3`,`batch_4`,`batch_5`,`batch_6`,`batch_7`,`batch_8`,`batch_9`, `win_date`, `added_time`, `type`,`g_time`) VALUES ('$game_time','".$batch_0_result."','".$batch_1_result."','".$batch_2_result."','".$batch_3_result."','".$batch_4_result."','".$batch_5_result."','".$batch_6_result."','".$batch_7_result."','".$batch_8_result."','".$batch_9_result."','".$game_date."','".$game_time."','Admin','".$time_row['g_time']."')");
 
   if($insert_result==true)
   {
@@ -87,7 +94,7 @@ if (mysqli_num_rows($select)>0)
   }
   else
   {
-   echo '<script> alert("Somthing Went Wrong !!"); </script>';
+   echo '<script> alert("Something Went Wrong !!"); </script>';
 
   }
 
