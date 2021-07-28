@@ -259,6 +259,15 @@ if ($current_time > $start_t and $current_time < $end_time_row['g_time']) {
                                                    ?>
                                                 </tr>
                                                 <tr align="center">
+                                                   <?php $batch_6 = explode(",", $row['batch_6']);
+                                                   foreach ($batch_6 as $batch_6_result) {
+
+                                                      echo "<td><b style='font-size:18px;'>" . $batch_6_result . " <br></b></td>";
+                                                   }
+
+                                                   ?>
+                                                </tr>
+                                                <tr align="center">
                                                    <?php $batch_7 = explode(",", $row['batch_7']);
                                                    foreach ($batch_7 as $batch_7_result) {
 
