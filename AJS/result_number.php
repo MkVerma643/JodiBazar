@@ -213,7 +213,7 @@ if(batch4_count>2)
 }
 }).get();
 
-var batch_5 = $("input[name='batch_3[]']").map(function()
+var batch_5 = $("input[name='batch_5[]']").map(function()
 {
 var batch_5= $(this).val();
 var batch5_count= $(this).val().length;
@@ -224,7 +224,7 @@ if(batch5_count>2)
 }
 }).get();
 
-var batch_6 = $("input[name='batch_3[]']").map(function()
+var batch_6 = $("input[name='batch_6[]']").map(function()
 {
 var batch_6= $(this).val();
 var batch6_count= $(this).val().length;
@@ -235,7 +235,7 @@ if(batch6_count>2)
 }
 }).get();
 
-var batch_7 = $("input[name='batch_3[]']").map(function()
+var batch_7 = $("input[name='batch_7[]']").map(function()
 {
 var batch_7= $(this).val();
 var batch7_count= $(this).val().length;
@@ -246,7 +246,7 @@ if(batch7_count>2)
 }
 }).get();
 
-var batch_8 = $("input[name='batch_3[]']").map(function()
+var batch_8 = $("input[name='batch_8[]']").map(function()
 {
 var batch_8= $(this).val();
 var batch8_count= $(this).val().length;
@@ -257,7 +257,7 @@ if(batch8_count>2)
 }
 }).get();
 
-var batch_9 = $("input[name='batch_3[]']").map(function()
+var batch_9 = $("input[name='batch_9[]']").map(function()
 {
 var batch_9= $(this).val();
 var batch9_count= $(this).val().length;

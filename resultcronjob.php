@@ -288,9 +288,12 @@ function num($define_number, $rand_number)
 {
   global $rand_number;
 
-  $num = rand(0, 99);
+  $num = rand(0, 129);
   if (strlen($num) == 1) {
     $rand_no = "0" . $num;
+  }
+  elseif (strlen($num) == 3) {
+    $rand_no = substr($num, 1);
   } else {
     $rand_no = $num;
   }
