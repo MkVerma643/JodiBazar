@@ -111,8 +111,7 @@ if ($current_time > $start_t and $current_time < $end_time_row['g_time']) {
                                  <div class="row" style="background-color:#fcf8e3; height:100%;">
                                     <div class="col-lg-12" style="padding:5px 0;">
                                        <div class="col-lg-4">
-                                       <h4><img src="logo.png" height="30px">
-                                       <b style="font-size: 24px; color: black;">JodiBazar Result Screen </b></h4>
+                                       <h4><b style="font-size: 24px; color: black;">JodiBazar Result Screen </b></h4>
                                        </div>
                                        <div class="col-lg-4">
                                           <h5><b style="font-size: 21px;line-height:20px;color: black;">Next Draw Time : <span class="navtext" id="current_game"></span></b></h5>
