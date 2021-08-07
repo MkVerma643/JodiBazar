@@ -7,9 +7,12 @@ if (isset($_POST['game_time'])) {
    {
       global $rand_number;
 
-      $num = rand(0, 99);
+      $num = rand(0, 129);
       if (strlen($num) == 1) {
          $rand_no = "0" . $num;
+      }
+      elseif (strlen($num) == 3) {
+         $rand_no = substr($num, 1);
       } else {
          $rand_no = $num;
       }
@@ -296,9 +299,9 @@ if (isset($_POST['game_time'])) {
       ?>
          <div class="col col-md-1"><input type="text" id="batch_0<?php echo $i ?>" name=batch_0[] value="<?php echo $batch_0_result_arr[$i]; ?>" class="is-valid form-control-success form-control number-input" maxlength="4" style="font-size: 12px;"></div>
          <script type="text/javascript">
-            $('#batch_1<?php echo $i ?>').keydown(function(e) {
+            $('#batch_0<?php echo $i ?>').keydown(function(e) {
 
-               var value = $('#batch_1<?php echo $i ?>').val().length;
+               var value = $('#batch_0<?php echo $i ?>').val().length;
                if (e.keyCode == 8 && value < 3)
                   e.preventDefault();
             });
