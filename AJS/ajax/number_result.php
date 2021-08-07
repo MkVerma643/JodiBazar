@@ -118,7 +118,7 @@
         {
       
          var value3 =  $('#batch_3<?php echo $i ?>').val().length;
-          if ( e.keyCode == 8 && value4 < 3)
+          if ( e.keyCode == 8 && value3 < 3)
              e.preventDefault();
        });
    </script>
@@ -144,7 +144,7 @@
         {
       
          var value4 =  $('#batch_4<?php echo $i ?>').val().length;
-          if ( e.keyCode == 8 && value5 < 3)
+          if ( e.keyCode == 8 && value4 < 3)
              e.preventDefault();
        });
    </script>
@@ -171,7 +171,7 @@
       
          var value5 =  $('#batch_5<?php echo $i ?>').val().length;
           if ( e.keyCode == 8 && value5 < 3)
-             e.preventDefault()6
+             e.preventDefault();
        });
      
    </script>
@@ -198,7 +198,7 @@
       
          var value6 =  $('#batch_6<?php echo $i ?>').val().length;
           if ( e.keyCode == 8 && value6 < 3)
-             e.preventDefault()7
+             e.preventDefault();
        });
      
    </script>
@@ -225,7 +225,7 @@
       
          var value7 =  $('#batch_7<?php echo $i ?>').val().length;
           if ( e.keyCode == 8 && value7 < 3)
-             e.preventDefault()8
+             e.preventDefault();
        });
      
    </script>
@@ -252,7 +252,7 @@
       
          var value8 =  $('#batch_8<?php echo $i ?>').val().length;
           if ( e.keyCode == 8 && value8 < 3)
-             e.preventDefault()9
+             e.preventDefault();
        });
      
    </script>

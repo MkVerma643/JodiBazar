@@ -2,10 +2,10 @@
   //error_reporting(0);
  error_reporting( ~E_NOTICE);
  
-$servername = "localhost";
-$username = "root";
-$password = "";
-$database = "jodi_game";
+ $servername = "localhost";
+ $username = "kalyaopt_root";
+ $password = "kalyaopt_root";
+ $database = "kalyaopt_jodi_game";
 
 // Create connection
 $con = mysqli_connect($servername, $username, $password, $database);
