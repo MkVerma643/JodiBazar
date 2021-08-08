@@ -289,27 +289,36 @@ function num($define_number, $rand_number)
   $count_repeat_times = 0;
   global $rand_number;
 
-  $num = rand(0, 99);
-  if (strlen($num) == 1) {
-    $rand_no = 0 . $num;
-  }
-  else {
-    $rand_no = $num;
-  }
+  $num=rand(0,99);
+    if(strlen($num)==1){
+      $rand_no="0".$num;
+    }
+    else{
+       $rand_no=$num;
+    }
 
   if(in_array($rand_no,$rand_number)){
     $count_repeat_times++;
-  }
 
-  if(($rand_no == $define_number or $count_repeat_times > 2)){
-     return num($define_number,$rand_number);
-    }
-  elseif($rand_no == $define_number or $count_repeat_times < 2){
-    array_push($rand_number,$rand_no);
-    return $rand_no;
+    if(($rand_no == $define_number or $count_repeat_times > 2)){
+      return num($define_number,$rand_number);
+     }
+   elseif($rand_no == $define_number or $count_repeat_times < 2){
+     array_push($rand_number,$rand_no);
+     return $rand_no;
+   }
+   else{
+     array_push($rand_number,$rand_no);
+     return $rand_no;
+   }
   }
   else{
+    if(($rand_no == $define_number)){
+     return num($define_number,$rand_number);
+    }
+    else{
     array_push($rand_number,$rand_no);
     return $rand_no;
     }
+  }
 }
