@@ -286,6 +286,7 @@ if (mysqli_num_rows($select) > 0) {
 
 function num($define_number, $rand_number)
 {
+  $count_repeat_times = 0;
   global $rand_number;
 
   $num = rand(0, 99);
@@ -296,13 +297,18 @@ function num($define_number, $rand_number)
     $rand_no = $num;
   }
 
-  if(in_array($rand_no,$rand_number) or ($rand_no == $define_number))
-    {
-    var_dump($rand_no);
+  if(in_array($rand_no,$rand_number)){
+    $count_repeat_times++;
+  }
+
+  if(($rand_no == $define_number or $count_repeat_times > 2)){
      return num($define_number,$rand_number);
     }
-    else
-    {
+  elseif($rand_no == $define_number or $count_repeat_times < 2){
+    array_push($rand_number,$rand_no);
+    return $rand_no;
+  }
+  else{
     array_push($rand_number,$rand_no);
     return $rand_no;
     }
