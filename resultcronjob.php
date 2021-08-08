@@ -288,20 +288,22 @@ function num($define_number, $rand_number)
 {
   global $rand_number;
 
-  $num = rand(0, 129);
+  $num = rand(0, 99);
   if (strlen($num) == 1) {
-    $rand_no = "0" . $num;
+    $rand_no = 0 . $num;
   }
-  elseif (strlen($num) == 3) {
-    $rand_no = substr($num, 1);
-  } else {
+  else {
     $rand_no = $num;
   }
 
-  if (in_array($rand_no, $rand_number) or ($rand_no == $define_number)) {
-    return num($define_number, $rand_number);
-  } else {
-    array_push($rand_number, $rand_no);
+  if(in_array($rand_no,$rand_number) or ($rand_no == $define_number))
+    {
+    var_dump($rand_no);
+     return num($define_number,$rand_number);
+    }
+    else
+    {
+    array_push($rand_number,$rand_no);
     return $rand_no;
-  }
+    }
 }
