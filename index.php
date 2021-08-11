@@ -97,6 +97,14 @@ if ($current_time > $start_t and $current_time < $end_time_row['g_time']) {
       table.table.table-bordered th {
          text-align: center;
       }
+
+      .table_th_td {
+         border: 1px solid black;
+         text-align: center;
+         padding: 10px;
+         width: 95%;
+      }
+      
    </style>
    <div class="container-fluid" style="padding-right:0px;padding-left: 0px;">
       <div id="UpdatePanel1">
@@ -104,26 +112,91 @@ if ($current_time > $start_t and $current_time < $end_time_row['g_time']) {
             <tbody>
                <tr>
                   <td align="center">
-                     <table width="100%" style="background-color: #acecd7;">
+                     <table width="100%" style="background-color: #fcf8e3;">
                         <tbody>
                            <tr>
                               <td align="center">
-                                 <div class="row" style="background-color:#fcf8e3; height:100%;">
-                                    <div class="col-lg-12" style="padding:5px 0;">
-                                       <div class="col-lg-4">
-                                       <h4><b style="font-size: 24px; color: black;">JodiBazar Result Screen </b></h4>
-                                       </div>
-                                       <div class="col-lg-4">
-                                          <h5><b style="font-size: 21px;line-height:20px;color: black;">Next Draw Time : <span class="navtext" id="current_game"></span></b></h5>
-                                       </div>
-                                       <div class="col-lg-4">
-                                          <h5><b style="font-size: 21px;line-height:20px;color: black;">Time To Draw : <span class="navtext" id="timer"> </span></b> </h5>
-                                       </div>
-                                    </div>
+                                 <div class="row" style="background-color:#888888; height:100%;">
+                                    <div class="col-lg-12" style="padding: 0;">
+                                       <h4></h4>
+                                   </div>
                                  </div>
                               </td>
                            </tr>
                            <tr>
+                              <td align="center" valign="top" style="padding:3px">
+
+                              <div class="col-lg-1" style="padding:10px;font-family:Arial" >
+                              <button class="btn btn-warning  btn-block mt-3" style="border-radius:25px;color:black;background-color:#fec007;">
+                                 <a href="http://jodibazar.com/" style="text-decoration: none;color: inherit;">Home</a></button>
+                              </div>
+                              <div class="col-lg-1" style="padding:10px;font-family:Arial" >
+                              <button class="btn btn-warning  btn-block mt-3" id="refresh" onClick="history.go(0)" style="border-radius:25px;color:black;background-color:#fec007;">
+                                 Refresh</button>
+                              </div>
+                              
+                                 <div class="col-lg-5"  style="">
+                                    <table >
+                                       <tbody>
+                                          <form method="GET">
+                                             <tr>
+                                                <td>
+                                                   <table cellpadding="5" cellspacing="0">
+                                                      <tbody>
+
+                                                         <tr >
+                                                            
+                                                         <div style="border-radius:25px;padding:2px">
+                                                            <td  style="padding:5px; " >
+
+                                                            <!-- <input type="date" name="report_date" min="<?php echo date('Y-m-d', strtotime('-15 day', strtotime($today_date)));?>" 
+                                                            value="<?php  if(!empty($_GET['report_date'])) {echo $_GET['report_date'];}else{echo $today_date;} ?>" 
+                                                            style="height: 35px;min-width:180px;border-radius: 20px;" class="form-control form-control-rounded" => -->
+
+                                                            <input type="date"  name="report_date"  
+                                                            value="<?php  if(!empty($_GET['report_date'])) {echo $_GET['report_date'];}else{echo $today_date;} ?>" 
+                                                            style="height: 35px;min-width:360px;border-radius:20px" class="form-control form-control-rounded" = >
+
+                                                            </td>
+                                                            <!-- <td bgcolor="">
+                                                               <!-- <select id='game_selected' name="game_selected" class="form-control form-control-rounded" style="height: 35px;border-radius: 20px;min-width:180px;">
+                                                                  <option value="">Draw Time</option>
+                                                                  <?php 
+                                                                     $gt=mysqli_query($con,"SELECT * From `game_time` ");
+                                                                     
+                                                                     while ($row=mysqli_fetch_array($gt)) {
+                                                                     
+                                                                      ?>
+                                                                  <option value='<?php echo $row['game_time'] ?>' <?php if($row['game_time']==$_GET['game_selected']){echo "selected";} ?> ><?php echo $row['game_time'] ?></option>
+                                                                  <?php } ?>
+                                                               </select> -->
+                                                            <!-- </td> -->
+                                                            <td bgcolor="" style="padding: 7px;">
+                                                            <input type="submit" name="view_result" value="Submit" class="btn btn-warning" style="background-color:#fec007; min-width:100px;border-radius:25px; color:black;border-color: none;font-family:Arial">
+                                                            </td>
+                                                            </div>
+                                                         </tr>
+                                                      </tbody>
+                                                   </table>
+                                                </td>                                                
+                                             </tr>
+                                          </form>
+                                       </tbody>
+                                    </table>
+                                 </div>
+                                 
+                                    
+                                  
+                                 <div class="col-lg-3" style="padding:12px">
+                                    <button class="btn btn-warning btn-block mt-3" id="refresh" style="font-size: 18px;line-height:18px;border-radius:25px ;color: black;background-color:#fec007;min-width:225px;border-color: none;font-family:Arial;">Next Draw On: <span  id="current_game"></span></button>
+                                 </div>
+                                 <div class="col-lg-2" style="padding:12px">
+                                    <button class="btn btn-warning btn-block mt-3" style="font-size: 18px;line-height:18px;color: black;border-radius:25px;background-color:#fec007;min-width:219px;border-color: none;font-family:Arial">Time To Draw: <span  id="timer"> </span></button>
+                                 </div>
+
+                              </td>
+                           </tr>
+                           <!-- <tr>
                               <td align="center" valign="top">
                                  <h3 style="color: #000000"> <span class="text-Primary">Online Lottery Result Of Draw Date :</span> <span class="text-secondary"><?php echo date('d-m-Y', strtotime($today_date)); ?></span></h3>
                                  <div class="card">
@@ -173,10 +246,10 @@ if ($current_time > $start_t and $current_time < $end_time_row['g_time']) {
                                     </table>
                                  </div>
                               </td>
-                           </tr>
+                           </tr> -->
 
-                           <tr>
-                           <tr>
+                           <tr >
+                           <tr >
                               <td align="center" valign="top">
                                  <br>
                                  <?php
@@ -195,100 +268,115 @@ if ($current_time > $start_t and $current_time < $end_time_row['g_time']) {
                                     if (date('Y-m-d H:i:s') > $g_show_time) {
 
                                  ?>
-                                       <div class="card" style="background: white;">
-                                          <table width="90%" class="table">
-                                             <tbody>
-                                                <tr>
-                                                   <td colspan="10" align="center"><b style="color:red;font-size:20px;"><?php echo $row['game_time'];
-                                                                                                                        // echo " ".$g_show_time; echo " ". date('Y-m-d H:i:s');
+                                       <div class="card" style="background: #bacfba;" width="90%">
+                                       <div>&nbsp;</div>
+                                          <table width="80%" class="table_th_td" style="border: 1px solid black;">
+                                             <tbody width="80%" style="border: 1px solid black;" style="border: 1px solid black;">
+                                                <tr style="background:#91c190 ;"  style="border: 1px solid black;">
+                                                   <td colspan="11" align="center" class="table_th_td"><b style="color:black;font-size:20px;">Time: <?php echo $row['game_time'];?>
+                                                                                                                        &nbsp;Date: <?php echo " ". date('d/m/Y');
                                                                                                                         ?></b></td>
                                                 </tr>
-                                                <tr align="center">
+                                                <tr align="center" class="table_th_td">
                                                    <?php $batch_0 = explode(",", $row['batch_0']);
+                                                   echo "<td style='background:#fcf8e3;padding: 10px;border-right: 1px solid black'><b style='font-size:20px;'>00<br></b></td>";
                                                    foreach ($batch_0 as $batch_0_result) {
 
-                                                      echo "<td><b style='font-size:18px;'>" . $batch_0_result . " <br></b></td>";
+                                                      echo "<td style='font-size:18px;padding: 10px;border-right: 1px solid black''><b style='font-size:20px;'>" . $batch_0_result . " <br></b></td>";
                                                    }
 
                                                    ?>
                                                 </tr>
-                                                <tr align="center">
+                                                <tr align="center" class="table_th_td">
                                                    <?php $batch_1 = explode(",", $row['batch_1']);
+                                                   echo "<td style='background:#fcf8e3;padding: 10px;border-right: 1px solid black''><b style='font-size:20px;'>10<br></b></td>";
+
                                                    foreach ($batch_1 as $batch_1_result) {
 
-                                                      echo "<td><b style='font-size:18px;'>" . $batch_1_result . " <br></b></td>";
+                                                      echo "<td style='font-size:18px;padding: 10px;border-right: 1px solid black''><b style='font-size:20px;'>" . $batch_1_result . " <br></b></td>";
                                                    }
 
                                                    ?>
                                                 </tr>
-                                                <tr align="center">
+                                                <tr align="center" class="table_th_td">
                                                    <?php $batch_2 = explode(",", $row['batch_2']);
+                                                   echo "<td style='background:#fcf8e3;padding: 10px;border-right: 1px solid black''><b style='font-size:20px;'>20<br></b></td>";
+
                                                    foreach ($batch_2 as $batch_2_result) {
 
-                                                      echo "<td><b style='font-size:18px;'>" . $batch_2_result . " <br></b></td>";
+                                                      echo "<td style='font-size:18px;padding: 10px;border-right: 1px solid black''><b style='font-size:20px;'>" . $batch_2_result . " <br></></td>";
                                                    }
 
                                                    ?>
                                                 </tr>
-                                                <tr align="center">
+                                                <tr align="center" class="table_th_td">
                                                    <?php $batch_3 = explode(",", $row['batch_3']);
+                                                   echo "<td style='background:#fcf8e3;padding: 10px;border-right: 1px solid black''><b style='font-size:20px;'>30<br></b></td>";
+
                                                    foreach ($batch_3 as $batch_3_result) {
 
-                                                      echo "<td><b style='font-size:18px;'>" . $batch_3_result . " <br></b></td>";
+                                                      echo "<td style='font-size:18px;padding: 10px;border-right: 1px solid black''><b style='font-size:20px;'>" . $batch_3_result . " <br></></td>";
                                                    }
 
                                                    ?>
                                                 </tr>
-                                                <tr align="center">
+                                                <tr align="center" class="table_th_td">
                                                    <?php $batch_4 = explode(",", $row['batch_4']);
+                                                   echo "<td style='background:#fcf8e3;padding: 10px;border-right: 1px solid black''><b style='font-size:20px;'>40<br></b></td>";
+
                                                    foreach ($batch_4 as $batch_4_result) {
 
-                                                      echo "<td><b style='font-size:18px;'>" . $batch_4_result . " <br></b></td>";
+                                                      echo "<td style='font-size:18px;padding: 10px;border-right: 1px solid black''><b style='font-size:20px;'>" . $batch_4_result . " <br></></td>";
                                                    }
 
                                                    ?>
                                                 </tr>
-                                                <tr align="center">
+                                                <tr align="center" class="table_th_td">
                                                    <?php $batch_5 = explode(",", $row['batch_5']);
+                                                   echo "<td style='background:#fcf8e3;padding: 10px;border-right: 1px solid black''><b style='font-size:20px;'>50<br></b></td>";
                                                    foreach ($batch_5 as $batch_5_result) {
 
-                                                      echo "<td><b style='font-size:18px;'>" . $batch_5_result . " <br></b></td>";
+                                                      echo "<td style='font-size:18px;padding: 10px;border-right: 1px solid black''><b style='font-size:20px;'>" . $batch_5_result . " <br></b></td>";
                                                    }
 
                                                    ?>
                                                 </tr>
-                                                <tr align="center">
+                                                <tr align="center" class="table_th_td">
                                                    <?php $batch_6 = explode(",", $row['batch_6']);
+                                                   echo "<td style='background:#fcf8e3;padding: 10px;border-right: 1px solid black''><b style='font-size:20px;'>60<br></b></td>";
                                                    foreach ($batch_6 as $batch_6_result) {
 
-                                                      echo "<td><b style='font-size:18px;'>" . $batch_6_result . " <br></b></td>";
+                                                      echo "<td style='font-size:18px;padding: 10px;border-right: 1px solid black''><b style='font-size:20px;'>" . $batch_6_result . " <br></b></td>";
                                                    }
 
                                                    ?>
                                                 </tr>
-                                                <tr align="center">
+                                                <tr align="center" class="table_th_td">
                                                    <?php $batch_7 = explode(",", $row['batch_7']);
+                                                   echo "<td style='background:#fcf8e3;padding: 10px;border-right: 1px solid black''><b style='font-size:20px;'>70<br></b></td>";
                                                    foreach ($batch_7 as $batch_7_result) {
 
-                                                      echo "<td><b style='font-size:18px;'>" . $batch_7_result . " <br></b></td>";
+                                                      echo "<td style='font-size:18px;padding: 10px;border-right: 1px solid black''><b style='font-size:20px;'>" . $batch_7_result . " <br></b></td>";
                                                    }
 
                                                    ?>
                                                 </tr>
-                                                <tr align="center">
+                                                <tr align="center" class="table_th_td">
                                                    <?php $batch_8 = explode(",", $row['batch_8']);
+                                                   echo "<td style='background:#fcf8e3;padding: 10px;border-right: 1px solid black''><b style='font-size:20px;'>80<br></b></td>";
                                                    foreach ($batch_8 as $batch_8_result) {
 
-                                                      echo "<td><b style='font-size:18px;'>" . $batch_8_result . " <br></b></td>";
+                                                      echo "<td style='font-size:18px;padding: 10px;border-right: 1px solid black''><b style='font-size:20px;'>" . $batch_8_result . " <br></b></td>";
                                                    }
 
                                                    ?>
                                                 </tr>
-                                                <tr align="center">
+                                                <tr align="center" class="table_th_td">
                                                    <?php $batch_9 = explode(",", $row['batch_9']);
+                                                   echo "<td style='background:#fcf8e3;padding: 10px;border-right: 1px solid black''><b style='font-size:18px;'>90<br></b></td>";
                                                    foreach ($batch_9 as $batch_9_result) {
 
-                                                      echo "<td><b style='font-size:18px;'>" . $batch_9_result . " <br></b></td>";
+                                                      echo "<td style='font-size:18px;padding: 10px;border-right: 1px solid black''><b style='font-size:18px;'>" . $batch_9_result . " <br></b></td>";
                                                    }
 
                                                    ?>
