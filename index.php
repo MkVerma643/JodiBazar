@@ -112,13 +112,13 @@ if ($current_time > $start_t and $current_time < $end_time_row['g_time']) {
             <tbody>
                <tr>
                   <td align="center">
-                     <table width="100%" style="background-color: #fcf8e3;">
+                     <table width="100%" style="background-color: #bacfba;">
                         <tbody>
                            <tr>
                               <td align="center">
                                  <div class="row" style="background-color:#888888; height:100%;">
                                     <div class="col-lg-12" style="padding: 0;">
-                                       <h4></h4>
+                                       <!-- <h4></h4> -->
                                    </div>
                                  </div>
                               </td>
@@ -127,26 +127,21 @@ if ($current_time > $start_t and $current_time < $end_time_row['g_time']) {
                               <td align="center" valign="top" style="padding:3px">
 
                               <div class="col-lg-1" style="padding:10px;font-family:Arial" >
-                              <button class="btn btn-warning  btn-block mt-3" style="border-radius:25px;color:black;background-color:#fec007;">
-                                 <a href="http://jodibazar.com/" style="text-decoration: none;color: inherit;">Home</a></button>
+                              <button class="btn btn-warning  btn-block mt-3" style="border-radius:25px;border-color:#97144d;background-color:#97144d;">
+                                 <a href="http://jodibazar.com/" style="text-decoration: none;color: white;">Jodi Bazar</a></button>
                               </div>
                               <div class="col-lg-1" style="padding:10px;font-family:Arial" >
-                              <button class="btn btn-warning  btn-block mt-3" id="refresh" onClick="history.go(0)" style="border-radius:25px;color:black;background-color:#fec007;">
+                              <button class="btn btn-warning  btn-block mt-3" id="refresh" onClick="history.go(0)" style="border-radius:25px;border-color:#97144d;background-color:#97144d;">
                                  Refresh</button>
                               </div>
                               
-                                 <div class="col-lg-5"  style="">
-                                    <table >
+                                 <div class="col-lg-4"  style="align:left;  ">
+                                    <table style="align:left">
                                        <tbody>
                                           <form method="GET">
                                              <tr>
-                                                <td>
-                                                   <table cellpadding="5" cellspacing="0">
-                                                      <tbody>
-
-                                                         <tr >
                                                             
-                                                         <div style="border-radius:25px;padding:2px">
+                                                         <div style="border-radius:25px;padding:2px; ">
                                                             <td  style="padding:5px; " >
 
                                                             <!-- <input type="date" name="report_date" min="<?php echo date('Y-m-d', strtotime('-15 day', strtotime($today_date)));?>" 
@@ -155,8 +150,21 @@ if ($current_time > $start_t and $current_time < $end_time_row['g_time']) {
 
                                                             <input type="date"  name="report_date"  
                                                             value="<?php  if(!empty($_GET['report_date'])) {echo $_GET['report_date'];}else{echo $today_date;} ?>" 
-                                                            style="height: 35px;min-width:360px;border-radius:20px" class="form-control form-control-rounded" = >
+                                                            style="height: 35px;min-width:150px;border-radius:20px" class="form-control form-control-rounded" = >
 
+                                                            </td>
+                                                            <td>
+                                                            <select id='game_selected' name="game_selected" class="form-control form-control-rounded" style="height: 35px;border-radius: 20px;min-width:150px;">
+                                                                  <option value="">Select Time</option> 
+                                                                  <?php 
+                                                                     $gt=mysqli_query($con,"SELECT * From `game_time` ");
+                                                                     
+                                                                     while ($row=mysqli_fetch_array($gt)) {
+                                                                     
+                                                                      ?>
+                                                                  <option value='<?php echo $row['game_time'] ?>' <?php if($row['game_time']==$_GET['game_selected']){echo "selected";} ?> ><?php echo $row['game_time'] ?></option>
+                                                                  <?php } ?>
+                                                               </select>
                                                             </td>
                                                             <!-- <td bgcolor="">
                                                                <!-- <select id='game_selected' name="game_selected" class="form-control form-control-rounded" style="height: 35px;border-radius: 20px;min-width:180px;">
@@ -169,29 +177,27 @@ if ($current_time > $start_t and $current_time < $end_time_row['g_time']) {
                                                                       ?>
                                                                   <option value='<?php echo $row['game_time'] ?>' <?php if($row['game_time']==$_GET['game_selected']){echo "selected";} ?> ><?php echo $row['game_time'] ?></option>
                                                                   <?php } ?>
-                                                               </select> -->
+                                                               </select>
                                                             <!-- </td> -->
                                                             <td bgcolor="" style="padding: 7px;">
-                                                            <input type="submit" name="view_result" value="Submit" class="btn btn-warning" style="background-color:#fec007; min-width:100px;border-radius:25px; color:black;border-color: none;font-family:Arial">
+                                                            <input type="submit" name="view_result" value="Submit" class="btn btn-warning" style="background-color:#97144d; min-width:100px;border-radius:25px; color:white;border-color: #97144d;font-family:Arial;">
                                                             </td>
                                                             </div>
-                                                         </tr>
-                                                      </tbody>
-                                                   </table>
-                                                </td>                                                
+                                                         </tr>                                               
                                              </tr>
                                           </form>
                                        </tbody>
                                     </table>
                                  </div>
-                                 
-                                    
-                                  
-                                 <div class="col-lg-3" style="padding:12px">
-                                    <button class="btn btn-warning btn-block mt-3" id="refresh" style="font-size: 18px;line-height:18px;border-radius:25px ;color: black;background-color:#fec007;min-width:225px;border-color: none;font-family:Arial;">Next Draw On: <span  id="current_game"></span></button>
-                                 </div>
+                                 <div class="col-lg-1" style="padding:12px"></div>                           
                                  <div class="col-lg-2" style="padding:12px">
-                                    <button class="btn btn-warning btn-block mt-3" style="font-size: 18px;line-height:18px;color: black;border-radius:25px;background-color:#fec007;min-width:219px;border-color: none;font-family:Arial">Time To Draw: <span  id="timer"> </span></button>
+                                    <button class="btn btn-warning btn-block mt-3" id="refresh" style="font-size: 18px;line-height:18px;border-radius:25px ;color: white;background-color:#97144d;min-width:220px;border-color: #97144d;font-family:Arial;">Current Draw: <span  id="current_game"></span></button>
+                                 </div>
+
+                                 <div class="col-lg-2" style="padding:0px">
+                                 <div style="padding:12px">
+                                    <button class="btn btn-warning btn-block mt-3" style="font-size: 18px;line-height:18px;color: white;border-radius:25px;background-color:#97144d;min-width:210px;border-color: #97144d;font-family:Arial">Time Left: <span  id="timer"> </span></button>
+                                    </div>
                                  </div>
 
                               </td>
@@ -272,9 +278,9 @@ if ($current_time > $start_t and $current_time < $end_time_row['g_time']) {
                                        <div>&nbsp;</div>
                                           <table width="80%" class="table_th_td" style="border: 1px solid black;">
                                              <tbody width="80%" style="border: 1px solid black;" style="border: 1px solid black;">
-                                                <tr style="background:#91c190 ;"  style="border: 1px solid black;">
-                                                   <td colspan="11" align="center" class="table_th_td"><b style="color:black;font-size:20px;">Time: <?php echo $row['game_time'];?>
-                                                                                                                        &nbsp;Date: <?php echo " ". date('d/m/Y');
+                                                <tr style="background:#002051 ;"  style="border: 1px solid black;">
+                                                   <td colspan="11" align="center" class="table_th_td"><b style="color:white;font-size:20px;">Draw Time: <?php echo $row['game_time'];?>
+                                                   &nbsp;-&nbsp;&nbsp;Draw Date: <?php echo " ". date('d-m-Y');
                                                                                                                         ?></b></td>
                                                 </tr>
                                                 <tr align="center" class="table_th_td">
@@ -282,7 +288,7 @@ if ($current_time > $start_t and $current_time < $end_time_row['g_time']) {
                                                    echo "<td style='background:#fcf8e3;padding: 10px;border-right: 1px solid black'><b style='font-size:20px;'>00<br></b></td>";
                                                    foreach ($batch_0 as $batch_0_result) {
 
-                                                      echo "<td style='font-size:18px;padding: 10px;border-right: 1px solid black''><b style='font-size:20px;'>" . $batch_0_result . " <br></b></td>";
+                                                      echo "<td style='font-size:18px;padding: 10px;border-right: 1px solid black; background:#f2f2f2''><b style='font-size:20px;'>" . $batch_0_result . " <br></b></td>";
                                                    }
 
                                                    ?>
@@ -293,7 +299,7 @@ if ($current_time > $start_t and $current_time < $end_time_row['g_time']) {
 
                                                    foreach ($batch_1 as $batch_1_result) {
 
-                                                      echo "<td style='font-size:18px;padding: 10px;border-right: 1px solid black''><b style='font-size:20px;'>" . $batch_1_result . " <br></b></td>";
+                                                      echo "<td style='font-size:18px;padding: 10px;border-right: 1px solid black;background:#f2f2f2''><b style='font-size:20px;'>" . $batch_1_result . " <br></b></td>";
                                                    }
 
                                                    ?>
@@ -304,7 +310,7 @@ if ($current_time > $start_t and $current_time < $end_time_row['g_time']) {
 
                                                    foreach ($batch_2 as $batch_2_result) {
 
-                                                      echo "<td style='font-size:18px;padding: 10px;border-right: 1px solid black''><b style='font-size:20px;'>" . $batch_2_result . " <br></></td>";
+                                                      echo "<td style='font-size:18px;padding: 10px;border-right: 1px solid black;background:#f2f2f2''><b style='font-size:20px;'>" . $batch_2_result . " <br></></td>";
                                                    }
 
                                                    ?>
@@ -315,7 +321,7 @@ if ($current_time > $start_t and $current_time < $end_time_row['g_time']) {
 
                                                    foreach ($batch_3 as $batch_3_result) {
 
-                                                      echo "<td style='font-size:18px;padding: 10px;border-right: 1px solid black''><b style='font-size:20px;'>" . $batch_3_result . " <br></></td>";
+                                                      echo "<td style='font-size:18px;padding: 10px;border-right: 1px solid black;background:#f2f2f2''><b style='font-size:20px;'>" . $batch_3_result . " <br></></td>";
                                                    }
 
                                                    ?>
@@ -326,7 +332,7 @@ if ($current_time > $start_t and $current_time < $end_time_row['g_time']) {
 
                                                    foreach ($batch_4 as $batch_4_result) {
 
-                                                      echo "<td style='font-size:18px;padding: 10px;border-right: 1px solid black''><b style='font-size:20px;'>" . $batch_4_result . " <br></></td>";
+                                                      echo "<td style='font-size:18px;padding: 10px;border-right: 1px solid black;background:#f2f2f2''><b style='font-size:20px;'>" . $batch_4_result . " <br></></td>";
                                                    }
 
                                                    ?>
@@ -336,7 +342,7 @@ if ($current_time > $start_t and $current_time < $end_time_row['g_time']) {
                                                    echo "<td style='background:#fcf8e3;padding: 10px;border-right: 1px solid black''><b style='font-size:20px;'>50<br></b></td>";
                                                    foreach ($batch_5 as $batch_5_result) {
 
-                                                      echo "<td style='font-size:18px;padding: 10px;border-right: 1px solid black''><b style='font-size:20px;'>" . $batch_5_result . " <br></b></td>";
+                                                      echo "<td style='font-size:18px;padding: 10px;border-right: 1px solid black;background:#f2f2f2''><b style='font-size:20px;'>" . $batch_5_result . " <br></b></td>";
                                                    }
 
                                                    ?>
@@ -346,7 +352,7 @@ if ($current_time > $start_t and $current_time < $end_time_row['g_time']) {
                                                    echo "<td style='background:#fcf8e3;padding: 10px;border-right: 1px solid black''><b style='font-size:20px;'>60<br></b></td>";
                                                    foreach ($batch_6 as $batch_6_result) {
 
-                                                      echo "<td style='font-size:18px;padding: 10px;border-right: 1px solid black''><b style='font-size:20px;'>" . $batch_6_result . " <br></b></td>";
+                                                      echo "<td style='font-size:18px;padding: 10px;border-right: 1px solid black;background:#f2f2f2''><b style='font-size:20px;'>" . $batch_6_result . " <br></b></td>";
                                                    }
 
                                                    ?>
@@ -356,7 +362,7 @@ if ($current_time > $start_t and $current_time < $end_time_row['g_time']) {
                                                    echo "<td style='background:#fcf8e3;padding: 10px;border-right: 1px solid black''><b style='font-size:20px;'>70<br></b></td>";
                                                    foreach ($batch_7 as $batch_7_result) {
 
-                                                      echo "<td style='font-size:18px;padding: 10px;border-right: 1px solid black''><b style='font-size:20px;'>" . $batch_7_result . " <br></b></td>";
+                                                      echo "<td style='font-size:18px;padding: 10px;border-right: 1px solid black;background:#f2f2f2''><b style='font-size:20px;'>" . $batch_7_result . " <br></b></td>";
                                                    }
 
                                                    ?>
@@ -366,17 +372,17 @@ if ($current_time > $start_t and $current_time < $end_time_row['g_time']) {
                                                    echo "<td style='background:#fcf8e3;padding: 10px;border-right: 1px solid black''><b style='font-size:20px;'>80<br></b></td>";
                                                    foreach ($batch_8 as $batch_8_result) {
 
-                                                      echo "<td style='font-size:18px;padding: 10px;border-right: 1px solid black''><b style='font-size:20px;'>" . $batch_8_result . " <br></b></td>";
+                                                      echo "<td style='font-size:18px;padding: 10px;border-right: 1px solid black;background:#f2f2f2''><b style='font-size:20px;'>" . $batch_8_result . " <br></b></td>";
                                                    }
 
                                                    ?>
                                                 </tr>
                                                 <tr align="center" class="table_th_td">
                                                    <?php $batch_9 = explode(",", $row['batch_9']);
-                                                   echo "<td style='background:#fcf8e3;padding: 10px;border-right: 1px solid black''><b style='font-size:18px;'>90<br></b></td>";
+                                                   echo "<td style='background:#fcf8e3;padding: 10px;border-right: 1px solid black''><b style='font-size:20px;'>90<br></b></td>";
                                                    foreach ($batch_9 as $batch_9_result) {
 
-                                                      echo "<td style='font-size:18px;padding: 10px;border-right: 1px solid black''><b style='font-size:18px;'>" . $batch_9_result . " <br></b></td>";
+                                                      echo "<td style='font-size:18px;padding: 10px;border-right: 1px solid black;background:#f2f2f2''><b style='font-size:20px;'>" . $batch_9_result . " <br></b></td>";
                                                    }
 
                                                    ?>
@@ -411,15 +417,16 @@ if ($current_time > $start_t and $current_time < $end_time_row['g_time']) {
                               </td>
                            </tr>
                            <tr>
-                              <td width="980" height="50" align="center" valign="middle" bgcolor="#ccc" class="txt-2">
+                              <td width="980" height="50" align="center" valign="middle" bgcolor="#fcf8e3" class="txt-2">
                                  <table border="0" cellpadding="0" cellspacing="0">
                                     <tbody>
                                        <tr>
                                           <td align="center">
                                              <span style="color: #000000">
-                                                Purchase of lottery using this website is strictly prohibited in the states where lotteries are banned. You must be above 18 years to play Online Lottery.
-                                                <br>
-                                                &nbsp;<b>JodiBazar,</b>&nbsp; All rights reserved.
+                                             <b>DISCLAIMER:</b> VIEWING THIS WEBSITE IS ON YOUR OWN RISK. ALL THE INFORMATION HERE IS BASED ON NUMERIC ASTROLOGY THAT IS NOT RELATED TO ANY TYPE OF GAMBLING.<br>
+                                             WE WARN YOU THAT GAMBLING IN OUR COUNTRY MAY BE BANNED OR ILLEGAL. WE ARE NOT RESPONSIBLE FOR ANY ISSUE OR SCAM.<br> 
+                                             WE RESPECT ALL COUNTRY RULES/LAWS. IF YOU NOT AGREE WITH OUR SITE DISCLAIMER. PLEASE QUIT IMMEDIATELY NOW.     
+                                                <!-- &nbsp;<b>JodiBazar,</b>&nbsp; All rights reserved. -->
                                              </span>
                                           </td>
                                        </tr>
