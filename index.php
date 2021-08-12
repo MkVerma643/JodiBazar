@@ -190,12 +190,12 @@ if ($current_time > $start_t and $current_time < $end_time_row['g_time']) {
                                  </div>
                                  <div class="col-lg-1" style="padding:12px"></div>                           
                                  <div class="col-lg-2" style="padding:12px">
-                                    <button class="btn btn-warning btn-block mt-3" id="refresh" style="font-size: 18px;line-height:18px;border-radius:25px ;color: white;background-color:#97144d;min-width:220px;border-color: #97144d;font-family:Arial;">Current Draw: <span  id="current_game"></span></button>
+                                    <button class="btn btn-warning btn-block mt-3" id="refresh" style="font-size: 18px;line-height:18px;border-radius:25px ;color: white;background-color:#97144d;min-width:300px;border-color: #97144d;font-family:Arial;">Current Draw Time: <span  id="current_game"></span></button>
                                  </div>
-
+                                 <div class="col-lg-1" style="padding:12px"></div>                           
                                  <div class="col-lg-2" style="padding:0px">
                                  <div style="padding:12px">
-                                    <button class="btn btn-warning btn-block mt-3" style="font-size: 18px;line-height:18px;color: white;border-radius:25px;background-color:#97144d;min-width:210px;border-color: #97144d;font-family:Arial">Time Left: <span  id="timer"> </span></button>
+                                    <button class="btn btn-warning btn-block mt-3" style="font-size: 18px;line-height:18px;color: white;border-radius:25px;background-color:#97144d;min-width:215px;border-color: #97144d;font-family:Arial">Time Left: <span  id="timer"> </span></button>
                                     </div>
                                  </div>
 
