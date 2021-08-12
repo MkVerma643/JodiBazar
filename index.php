@@ -124,8 +124,7 @@ if ($current_time > $start_t and $current_time < $end_time_row['g_time']) {
                               </td>
                            </tr>
                            <tr>
-                              <td align="center" valign="top" style="padding:3px">
-
+                              <td align="center" valign="top" style="padding:13px">
                               <div class="col-lg-1" style="padding:10px;font-family:Arial" >
                               <button class="btn btn-warning  btn-block mt-3" style="border-radius:25px;border-color:#97144d;background-color:#97144d;">
                                  <a href="http://jodibazar.com/" style="text-decoration: none;color: white;">Jodi Bazar</a></button>
@@ -202,59 +201,6 @@ if ($current_time > $start_t and $current_time < $end_time_row['g_time']) {
 
                               </td>
                            </tr>
-                           <!-- <tr>
-                              <td align="center" valign="top">
-                                 <h3 style="color: #000000"> <span class="text-Primary">Online Lottery Result Of Draw Date :</span> <span class="text-secondary"><?php echo date('d-m-Y', strtotime($today_date)); ?></span></h3>
-                                 <div class="card">
-                                    <table align="center">
-                                       <tbody>
-                                          <form method="GET">
-                                             <tr>
-                                                <td>
-                                                   <table border="0" align="left" cellpadding="5" cellspacing="0">
-                                                      <tbody>
-
-                                                         <tr>
-                                                            <td align="left" bgcolor="#fff" style="padding: 20px;">
-                                                               <input type="date" name="report_date" min="<?php echo date('Y-m-d', strtotime('-15 day', strtotime($today_date))); ?>" value="<?php if (!empty($_GET['report_date'])) {
-                                                                                                                                                                                                echo $_GET['report_date'];
-                                                                                                                                                                                             } else {
-                                                                                                                                                                                                echo $today_date;
-                                                                                                                                                                                             } ?>" style="height: 35px;min-width:180px;border-radius: 20px;" class="form-control form-control-rounded"=>
-                                                            </td>
-                                                            <td bgcolor="#fff"><span style="margin: 10px;display: none;"></span></td>
-                                                            <td bgcolor="#fff">
-                                                               <select id='game_selected' name="game_selected" class="form-control form-control-rounded" style="height: 35px;border-radius: 20px;min-width:180px;">
-                                                                  <option value="">Draw Time</option>
-                                                                  <?php
-                                                                  $gt = mysqli_query($con, "SELECT * From `game_time` ");
-
-                                                                  while ($row = mysqli_fetch_array($gt)) {
-
-                                                                  ?>
-                                                                     <option value='<?php echo $row['game_time'] ?>' <?php if ($row['game_time'] == $_GET['game_selected']) {
-                                                                                                                        echo "selected";
-                                                                                                                     } ?>><?php echo $row['game_time'] ?></option>
-                                                                  <?php } ?>
-                                                               </select>
-                                                            </td>
-                                                         </tr>
-                                                      </tbody>
-                                                   </table>
-                                                </td>
-                                                <td bgcolor="#fff"><span style="margin: 10px;display: none;"></span></td>
-                                                <td bgcolor="#fff" style="padding: 20px;">
-                                                   <input type="submit" name="view_result" value="Show" class="btn btn-primary" style="background-color:#008cff">
-                                                </td>
-                                             </tr>
-                                          </form>
-                                       </tbody>
-                                    </table>
-                                 </div>
-                              </td>
-                           </tr> -->
-
-                           <tr >
                            <tr >
                               <td align="center" valign="top">
                                  <br>
