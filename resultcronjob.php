@@ -284,12 +284,12 @@ if (mysqli_num_rows($select) > 0) {
   }
 }
 
-
+$counter = array('hello' => 'world');
 function num($define_number, $rand_number)
 {
   global $rand_number;
   global $ignore_number;
-  $count = 0;
+  global $counter;
 
   $num=rand(0,99);
     if(strlen($num)==1){
@@ -299,29 +299,50 @@ function num($define_number, $rand_number)
        $rand_no=$num;
     }
 
-  if(!in_array($rand_no,$rand_number) and !in_array($rand_no,$ignore_number)){
-    array_push($rand_number,$rand_no);
-    $count = $count + 1;
-    return $rand_no; 
-  }
-  elseif(in_array($rand_no,$rand_number) and !in_array($rand_no,$ignore_number) and $count < 2){
-    if(($rand_no == $define_number)){
+    $str_value = strval($rand_no);
+    if (!in_array($rand_no, $ignore_number)) {
+      print_r($counter);
+      print($str_value);
+      if (array_key_exists($str_value, $counter)) {
+        $counter[$str_value]++;
+        if ($counter[$str_value] <= 2) {
+          // element occurs less than or equal twice
+          array_push($rand_number, $rand_no);
+          return $rand_no; 
+        } else {
+          // occurs more than twice
+          return num($define_number,$rand_number);
+        }
+      } else {
+        $counter[$str_value] = 1;
+        array_push($rand_number, $rand_no);
+        return $rand_no; 
+      }
+    } else {
       return num($define_number,$rand_number);
-     }
-   else{
-    array_push($rand_number,$rand_no);
-    $count = $count + 1;
-    return $rand_no;
-   }
-  }
-  else{
-    if(!in_array($rand_no,$ignore_number)){
-      array_push($rand_number,$rand_no);
-      return $rand_no;
     }
-    else{
-      return num($define_number,$rand_number);
-    }
-  }
 
+    
+  // if(!in_array($rand_no,$rand_number) and !in_array($rand_no,$ignore_number)){
+  //   array_push($rand_number,$rand_no);
+  //   return $rand_no; 
+  // }
+  // elseif(in_array($rand_no,$rand_number) and !in_array($rand_no,$ignore_number)){
+  //   if(($rand_no == $define_number)){
+  //     return num($define_number,$rand_number);
+  //    }
+  //  else{
+  //   array_push($rand_number,$rand_no);
+  //   return $rand_no;
+  //  }
+  // }
+  // else{
+  //   if(!in_array($rand_no,$ignore_number)){
+  //     array_push($rand_number,$rand_no);
+  //     return $rand_no;
+  //   }
+  //   else{
+  //     return num($define_number,$rand_number);
+  //   }
+  // }
 }
