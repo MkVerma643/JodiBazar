@@ -41,7 +41,8 @@ if (mysqli_num_rows($select) > 0) {
     $ignore_number = explode(",", $row['ignore_number']);
 
     foreach ($ignore_number as $ignore) {
-      array_push($rand_number, $ignore);
+      // array_push($rand_number, $ignore);
+      array_push($ignore_number, $ignore);
     }
 
 
@@ -286,8 +287,9 @@ if (mysqli_num_rows($select) > 0) {
 
 function num($define_number, $rand_number)
 {
-  $count_repeat_times = 0;
   global $rand_number;
+  global $ignore_number;
+  $count = 0;
 
   $num=rand(0,99);
     if(strlen($num)==1){
@@ -297,28 +299,29 @@ function num($define_number, $rand_number)
        $rand_no=$num;
     }
 
-  if(in_array($rand_no,$rand_number)){
-    $count_repeat_times++;
-
-    if(($rand_no == $define_number or $count_repeat_times > 2)){
+  if(!in_array($rand_no,$rand_number) and !in_array($rand_no,$ignore_number)){
+    array_push($rand_number,$rand_no);
+    $count = $count + 1;
+    return $rand_no; 
+  }
+  elseif(in_array($rand_no,$rand_number) and !in_array($rand_no,$ignore_number) and $count < 2){
+    if(($rand_no == $define_number)){
       return num($define_number,$rand_number);
      }
-   elseif($rand_no == $define_number or $count_repeat_times < 2){
-     array_push($rand_number,$rand_no);
-     return $rand_no;
-   }
    else{
-     array_push($rand_number,$rand_no);
-     return $rand_no;
+    array_push($rand_number,$rand_no);
+    $count = $count + 1;
+    return $rand_no;
    }
   }
   else{
-    if(($rand_no == $define_number)){
-     return num($define_number,$rand_number);
+    if(!in_array($rand_no,$ignore_number)){
+      array_push($rand_number,$rand_no);
+      return $rand_no;
     }
     else{
-    array_push($rand_number,$rand_no);
-    return $rand_no;
+      return num($define_number,$rand_number);
     }
   }
+
 }
