@@ -98,7 +98,7 @@ if(isset($_POST['submit']))
                      <div id='divdata'>
                      </div>
                      <div class="form-actions form-group">
-                        <center><button type="submit" class="btn btn-primary" name="submit">Submit</button></center>
+                        <center><button type="submit" class="btn btn-primary" name="submit" style="width:300px">Submit</button></center>
                      </div>
                   </form>
                </div>
