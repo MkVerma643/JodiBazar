@@ -301,8 +301,8 @@ function num($define_number, $rand_number)
 
     $str_value = strval($rand_no);
     if (!in_array($rand_no, $ignore_number)) {
-      print_r($counter);
-      print($str_value);
+      // print_r($counter);
+      // print($str_value);
       if (array_key_exists($str_value, $counter)) {
         $counter[$str_value]++;
         if ($counter[$str_value] <= 2) {
