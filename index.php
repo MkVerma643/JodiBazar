@@ -225,8 +225,9 @@ if ($current_time > $start_t and $current_time < $end_time_row['g_time']) {
                                              <tbody width="80%" style="border: 1px solid black;" style="border: 1px solid black;">
                                                 <tr style="background:#002051 ;"  style="border: 1px solid black;">
                                                    <td colspan="11" align="center" class="table_th_td"><b style="color:white;font-size:20px;">Draw Time: <?php echo $row['game_time'];?>
-                                                   &nbsp;-&nbsp;&nbsp;Draw Date: <?php echo " ". date('d-m-Y');
-                                                                                                                        ?></b></td>
+                                                   &nbsp;-&nbsp;&nbsp;Draw Date: <?php 
+                                                   $drawDate=date("d-m-Y",strtotime($_GET['report_date'])); 
+                                                   echo " ". $drawDate; ?></b></td>
                                                 </tr>
                                                 <tr align="center" class="table_th_td">
                                                    <?php $batch_0 = explode(",", $row['batch_0']);
