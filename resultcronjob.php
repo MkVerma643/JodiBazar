@@ -322,7 +322,17 @@ function num($define_number, $rand_number)
       return num($define_number,$rand_number);
     }
 
-    
+    /*
+    elseif(in_array($rand_no,$rand_number)){
+      if(($rand_no == $define_number)){
+        return num($define_number,$rand_number);
+       }
+       else{
+        array_push($rand_number, $rand_no);
+        return $rand_no; 
+       }
+      }
+    */
   // if(!in_array($rand_no,$rand_number) and !in_array($rand_no,$ignore_number)){
   //   array_push($rand_number,$rand_no);
   //   return $rand_no; 
