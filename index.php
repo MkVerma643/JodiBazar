@@ -124,7 +124,7 @@ if ($current_time > $start_t and $current_time < $end_time_row['g_time']) {
                               </td>
                            </tr>
                            <tr>
-                              <td align="center" valign="top" style="padding:13px">
+                              <td align="center" valign="top" style="padding:12px">
                               <div class="col-lg-1" style="padding:10px;font-family:Arial" >
                               <button class="btn btn-warning  btn-block mt-3" style="border-radius:25px;border-color:#97144d;background-color:#97144d;">
                                  <a href="http://jodibazar.com/" style="text-decoration: none;color: white;">Jodi Bazar</a></button>
@@ -134,7 +134,7 @@ if ($current_time > $start_t and $current_time < $end_time_row['g_time']) {
                                  Refresh</button>
                               </div>
                               
-                                 <div class="col-lg-4"  style="align:left;  ">
+                                 <div class="col-lg-5"  style="align:left;  ">
                                     <table style="align:left">
                                        <tbody>
                                           <form method="GET">
@@ -188,15 +188,13 @@ if ($current_time > $start_t and $current_time < $end_time_row['g_time']) {
                                        </tbody>
                                     </table>
                                  </div>
-                                 <div class="col-lg-1" style="padding:12px"></div>                           
-                                 <div class="col-lg-3" style="padding:12px">
-                                    <button class="btn btn-warning btn-block mt-3" id="refresh" style="font-size: 18px;line-height:18px;border-radius:25px ;color: white;background-color:#97144d;min-width:300px;border-color: #97144d;font-family:Arial;">Current Draw Time: <span  id="current_game"></span></button>
+                                 <!-- <div class="col-lg-1" style="padding:12px"></div>                            -->
+                                 <div class="col-lg-3" style="padding:11px">
+                                    <button class="btn btn-warning btn-block mt-3" id="refresh" style="font-size: 18px;line-height:18px;border-radius:25px ;color: white;background-color:#97144d;min-width:300px;border-color: #97144d;font-family:Arial;">Current Draw: <span  id="current_game"></span></button>
                                  </div>
                                  <!-- <div class="col-lg-1" style="padding:12px"></div>                            -->
-                                 <div class="col-lg-2" style="padding:0px">
-                                 <div style="padding:12px">
+                                 <div class="col-lg-2" style="padding:11px">
                                     <button class="btn btn-warning btn-block mt-3" style="font-size: 18px;line-height:18px;color: white;border-radius:25px;background-color:#97144d;min-width:215px;border-color: #97144d;font-family:Arial">Time Left: <span  id="timer"> </span></button>
-                                    </div>
                                  </div>
                               </td>
                            </tr>

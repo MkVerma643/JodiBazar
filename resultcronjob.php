@@ -313,6 +313,9 @@ function num($define_number, $rand_number)
           // occurs more than twice
           return num($define_number,$rand_number);
         }
+      } else if (!array_key_exists($str_value, $counter) && in_array($rand_no,$rand_number)) {
+        $counter[$str_value] = 1;
+        return num($define_number,$rand_number);
       } else {
         $counter[$str_value] = 1;
         array_push($rand_number, $rand_no);
